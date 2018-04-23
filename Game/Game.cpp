@@ -89,9 +89,32 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     */
     
     
+    
+    
     int h = 0;
     for (int t = 0; t<1000; t++){
-        aster[t] = new AsteroidObject("/Users/oliverhodge/Desktop/Game/Assets/rock.png", rand() % 800, h);
+{
+	int spriteNum = 1 + rand() % 3;
+	switch (spriteNum)
+	{
+	case 1:
+		path = "/Users/oliverhodge/Desktop/Game/Assets/rock2.png";
+		break;
+	case 2:
+		path = "/Users/oliverhodge/Desktop/Game/Assets/rock3.png";
+		break;
+	case 3:
+		path = "/Users/oliverhodge/Desktop/Game/Assets/rock4.png";
+		break;
+    case 4:
+		path = "/Users/oliverhodge/Desktop/Game/Assets/rock5.png";
+		break;
+	default:
+		path = "/Users/oliverhodge/Desktop/Game/Assets/rock.png";
+		break;
+	}
+}
+        aster[t] = new AsteroidObject(path, rand() % 800, h);
         h=h-50;
     }
     val = 0;
